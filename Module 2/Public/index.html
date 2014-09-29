@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html ng-app="demoApp">
+<head>
+    <title>Module 2</title>
+    <link href="/bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    
+    <style>
+        .ng-invalid {
+            background-color: red;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div ng-controller="movieCtrl">
+        <form name="frm">
+            <div class="form-group">
+                <label class="col-sm-2">Title:</label>
+                <input type="text"
+                       name="title"
+                       class="col-sm-9"
+                       ng-model="movie.title"
+                       ng-required="true" />
+                <div class="col-sm-12" ng-if="frm.title.$error.required">
+                    Please enter the title
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2">Description:</label>
+                <input type="text"
+                       class="col-sm-9"
+                       ng-model="movie.description" />
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2">Year:</label>
+                <input type="text"
+                       class="col-sm-9"
+                       ng-model="movie.year" />
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2">Rating:</label>
+                <input type="text"
+                       class="col-sm-9"
+                       ng-model="movie.rating" />
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2">Director:</label>
+                <select ng-options="d.id as d.name for d in directors"
+                        ng-model="movie.directorID">
+                    
+                </select>
+                <!--<input type="text"
+                           class="col-sm-9"
+                           ng-model="movie.directorID" />-->
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2">Country:</label>
+                <input type="text"
+                       class="col-sm-9"
+                       ng-model="movie.countryID" />
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2">Poster:</label>
+                <input type="text"
+                       class="col-sm-9"
+                       ng-model="movie.posterName" />
+            </div>
+            <div class="form-group col-sm-2">
+                <button class="btn"
+                        ng-disabled="frm.$invalid"
+                        ng-click="save()">
+                    Save
+                </button>
+            </div>
+        </form>
+    </div>
+    <script src="/bower_components/angular/angular.js"> </script>
+    <script src="App/Directors.js"></script>
+    <script src="App/Countries.js"></script>
+    <script src="/App/App.js"> </script>
+</body>
+</html>
