@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Module 3</title>
+    <link href="/bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+</head>
+<body ng-app="demoApp">
+
+    <div ng-controller="demoCtrl">
+        <div>
+            Input: <input type="text" value="" my-focus="true" />
+            
+        </div>
+
+        <u>
+            <li ng-repeat="n in [1,2,3]">
+                <div my-template="true" >The orginal</div>
+
+            </li>
+        </u>
+    </div>
+
+    <script src="/bower_components/angular/angular.js"> </script>
+    <script src="/App/App.js"> </script>
+</body>
+</html>
