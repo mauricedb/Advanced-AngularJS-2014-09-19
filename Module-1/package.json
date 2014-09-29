@@ -1,0 +1,17 @@
+{
+  "name": "AngularStarterProject",
+  "version": "1.0.0",
+  "description": "Starter project for AngularJS Demos",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.9.5",
+    "underscore": "^1.7.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "karma start",
+    "start": "node server.js"
+  },
+  "author": "Maurice de Beijer",
+  "license": "ISC"
+}

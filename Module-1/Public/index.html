@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html ng-app="mainModule">
+<head>
+    <title>Module 1</title>
+</head>
+<body>
+    <!--<div ng-controller="demo2Ctrl"></div>
+
+        <div ng-controller="demoCtrl">
+
+            <button ng-click="clickMe()">Click me</button>
+        </div>-->
+    <div ng-controller="demoCtrl">
+        <button ng-click="doWork()">Start</button>
+        <br />
+        {{result}}
+    </div>
+
+    <!--<div ng-controller="moviesCtrl">
+        <input type="text" ng-model="searchText" />
+        <br />
+        <ul>
+            <li ng-repeat="movie in movies | filter:{'title':searchText}">
+                {{movie.title}}
+            </li>
+        </ul>
+    </div>-->
+
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="App/Movies.js"></script>
+    <script src="App/AsyncApp.js"></script>
+</body>
+</html>
