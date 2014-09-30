@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Module 4</title>
+    <link href="/bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <style>
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+            display: none !important;
+        }
+    </style>
+</head>
+<body ng-app="myApp">
+
+    <div ng-controller="indexCtrl as theController">
+        <span class="ng-cloak">
+            <!--The current date is: {{now | date}}-->
+            The current date is: {{now}}
+        </span>
+        <hr />
+        <ul class="ng-cloak">
+            <li ng-repeat="movie in movies">
+                {{movie.title}} by {{directorName(movie.directorID)}}
+            </li>
+        </ul>
+
+    </div>
+
+    <script src="/bower_components/lodash/dist/lodash.js"></script>
+    <script src="/bower_components/angular/angular.js"> </script>
+    <script src="App/Externals.js"></script>
+    <script src="App/Directors.js"></script>
+    <script src="App/Movies.js"></script>
+    <script src="/App/App.js"> </script>
+</body>
+</html>
