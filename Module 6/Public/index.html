@@ -1,20 +1,25 @@
 ﻿<!DOCTYPE html>
 <html>
-    <head>
-        <title>Module 6</title>
-        <link href="/bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
-    </head>
-    <body ng-app="myApp">
-         
-        <div ng-controller="demoCtrl">
-            <!--<div my-directive1="1" my-directive2="2"></div>-->
-            
-            {{snippet}}
+<head>
+    <title>Module 6</title>
+    <link href="/bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <style>
+        .red {
+            background-color: red;
+        }
+    </style>
+</head>
+<body ng-app="myApp">
 
-        </div>
-       
+    <div ng-controller="demoCtrl">
+        <!--<div my-directive1="1" my-directive2="2"></div>-->
 
-        <script src="/bower_components/angular/angular.js"> </script>
-        <script src="/App/App.js"> </script>
-    </body>
+        <div ng-bind-html="snippet"></div>
+
+    </div>
+
+
+    <script src="/bower_components/angular/angular.js"> </script>
+    <script src="/App/App.js"> </script>
+</body>
 </html>

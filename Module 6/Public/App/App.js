@@ -3,7 +3,7 @@
 app.controller("demoCtrl", function ($scope, $sce) {
     console.log($scope);
 
-    $scope.snippet = $sce.trustAsHtml("<div>Data</div>");
+    $scope.snippet = $sce.trustAsHtml("<div class='red' onclick='alert()'>Data</div>");
 });
 
 
