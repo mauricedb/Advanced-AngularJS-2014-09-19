@@ -1,0 +1,132 @@
+﻿<form name="theForm" class="col-lg-8 form-horizontal" role="form">
+    <div class="alert alert-danger"
+         ng-show="errorMessage">
+        {{errorMessage}}
+    </div>
+    <div class="form-group"
+         ng-class="{'has-error': theForm.title.$invalid}">
+        <label class="col-lg-2 control-label">Title</label>
+        <div class="col-lg-8">
+            <input type="text"
+                   name="title"
+                   class="form-control"
+                   ng-model="selectedMovie.title"
+                   ng-required="true"
+                   ng-minlength="2"
+                   ng-maxlength="80">
+            <div ng-show="theForm.title.$error.required"
+                 class="alert alert-danger">
+                A title is required!
+            </div>
+            <div ng-show="theForm.title.$error.minlength"
+                 class="alert alert-danger">
+                A title should be more that one character!
+            </div>
+            <div ng-show="theForm.title.$error.maxlength"
+                 class="alert alert-danger">
+                The maximum length of a movie title is 80 characters!
+            </div>
+        </div>
+    </div>
+    <div class="form-group"
+         ng-class="{'has-error': theForm.description.$invalid}">
+        <label class="col-lg-2 control-label">Description</label>
+        <div class="col-lg-8">
+            <textarea type="text"
+                      name="description"
+                      class="form-control"
+                      rows="10"
+                      ng-model="selectedMovie.description"
+                      ng-required="true"></textarea>
+            <div ng-show="theForm.description.$error.required"
+                 class="alert alert-danger">
+                A description is required!
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-lg-8 col-lg-offset-2">
+            <input type="checkbox" ng-model="showDetails" />More details
+        </div>
+    </div>
+
+    <div ng-if="showDetails">
+        <div class="form-group"
+             ng-class="{'has-error': theForm.year.$invalid}">
+            <label class="col-lg-2 control-label">Year</label>
+            <div class="col-lg-8">
+                <input type="number"
+                       name="year"
+                       class="form-control"
+                       ng-model="selectedMovie.year"
+                       min="1867"
+                       max="{{thisYear}}">
+                <div ng-show="theForm.year.$error.min"
+                     class="alert alert-danger">
+                    That was before movies where invented by <a href="http://www.world-film-awards.com/history-of-film.html">William Lincoln</a>!
+                </div>
+                <div ng-show="theForm.year.$error.max"
+                     class="alert alert-danger">
+                    Can't be in the future!
+                </div>
+                <div ng-show="theForm.year.$error.number"
+                     class="alert alert-danger">
+                    That isn't a valid year!
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-2 control-label">Rating</label>
+            <div class="col-lg-8">
+                <input type="text" class="form-control" ng-model="selectedMovie.rating">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-2 control-label">Director</label>
+            <div class="col-lg-8">
+                <select class="form-control"
+                        name="director"
+                        ng-model="selectedMovie.directorID"
+                        ng-options="d.id as d.name for d in directors"
+                        ng-required="true">
+                    <option value="">(Select the director)</option>
+                </select>
+                <div ng-show="theForm.director.$error.required"
+                     class="alert alert-danger">
+                    A director is required!
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-2 control-label">Country</label>
+            <div class="col-lg-8">
+                <select class="form-control"
+                        name="country"
+                        ng-model="selectedMovie.countryID"
+                        ng-options="c.id as c.name for c in countries"
+                        ng-required="true">
+                    <option value="">(Select the country)</option>
+                </select>
+                <div ng-show="theForm.country.$error.required"
+                     class="alert alert-danger">
+                    A country is required!
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-lg-offset-2 col-lg-8">
+            <button ng-click="save(theForm)"
+                    ng-disabled="theForm.$pristine || theForm.$invalid"
+                    class="btn btn-primary">
+                Save
+            </button>
+            <button id="save" ng-click="cancel(theForm)"
+                    class="btn btn-warning">
+                Cancel
+            </button>
+        </div>
+    </div>
+</form>
