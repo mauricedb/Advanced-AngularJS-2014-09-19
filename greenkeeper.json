@@ -1,0 +1,20 @@
+{
+  "groups": {
+    "default": {
+      "packages": [
+        "Module 1/Public/bower_components/bootstrap/package.json",
+        "Module 1/package.json",
+        "Module 2/Public/bower_components/bootstrap/package.json",
+        "Module 2/package.json",
+        "Module 3/Public/bower_components/bootstrap/package.json",
+        "Module 3/package.json",
+        "Module 4/Public/bower_components/bootstrap/package.json",
+        "Module 4/package.json",
+        "Module 5/Public/bower_components/bootstrap/package.json",
+        "Module 5/package.json",
+        "Module 6/Public/bower_components/bootstrap/package.json",
+        "Module 6/package.json"
+      ]
+    }
+  }
+}
